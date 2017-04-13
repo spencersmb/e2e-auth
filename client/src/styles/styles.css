@@ -1,0 +1,59 @@
+#app {
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #4d4d4d;
+    min-width: 550px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+a.active {
+    color: orange;
+}
+
+nav {
+    padding-top: 20px;
+}
+
+.users-list{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card-block{
+    flex: 1 33.3333%;
+    margin-bottom:30px;
+}
+
+.card-inner{
+    padding: 15px;
+}
+
+.auth-form{
+    max-width: 500px;
+}
+
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+
+.bs-callout-danger {
+    border-left-color: #ce4844;
+}
+
+.bs-callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.bs-callout-danger h4 {
+    color: #ce4844;
+}
+
+.has-feedback label~.form-control-feedback {
+    top: 23px;
+}

@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt-nodejs');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema; // Schema tells mogoose about our particular fields
 
-// Define our model
+// Define our DB model
 const userSchema = new Schema({
     email: { type: String, unique: true, lowercase: true }, // can only have 1 email, no duplicates - this will throw an error
     password: String
@@ -38,6 +38,19 @@ userSchema.pre('save', function(next){
     });
 });
 
+//Helper method to check PW
+userSchema.methods.comparePassword = function(candidatePassword, callback){
+
+    //compare with bcrypt method
+    // this.password is the pw stored in the DB
+    bcrypt.compare(candidatePassword, this.password, function(err, isMatch){
+        
+        if(err){return callback(err);}
+
+
+        callback(null, isMatch);
+    });
+};
 
 // Create the model class
 // loads the schema into mongoose with a collection named user
