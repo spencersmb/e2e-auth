@@ -1,3 +1,4 @@
+
 const passport = require('passport');
 const User = require('../models/user');
 const config = require('../config');
@@ -9,6 +10,11 @@ const LocalStrategy = require('passport-local');
     SignUp ------ send email + pw ------ verify its not in use -------- Return a JWT Token
     SignIn ------ send email + pw ------ verify email + pw combo with Local Strategy ------ Return JWT Token
     Auth'D Request for a resource ----- verify token with JWT Strategy ------ Give them resource access
+
+    // Hold app secrets and config
+    module.exports = {
+        secret: 'dhosguhndvsdj2450824jgk'
+    }
 */
 
 // Create Local Strategy for login
